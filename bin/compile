@@ -13,14 +13,13 @@ mkdir -p $CACHE_DIR $BIN_PATH $TMP_PATH $LIB_PATH
                  
 
 if [ "$STACK" == "heroku-18" ]; then
-  UBUNTU_VERSION="bionic"
+  WKHTMLTOPDF_URL="https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb"
 elif [ "$STACK" == "heroku-20" ]; then
-  UBUNTU_VERSION="focal"
+  WKHTMLTOPDF_URL="https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb"
 elif [ "$STACK" == "heroku-22" ]; then
-  UBUNTU_VERSION="jammy"
+  WKHTMLTOPDF_URL="https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb"
 fi
 
-WKHTMLTOPDF_URL="https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.${UBUNTU_VERSION}_amd64.deb"
 WKHTMLTOPDF_PKG="$CACHE_DIR/wkhtmltopdf.deb"
 WKHTMLTOPDF_PATH="$TMP_PATH/wkhtmltopdf"
 WKHTMLTOPDF_BINARIES="$WKHTMLTOPDF_PATH/usr/local/bin"
